@@ -47,7 +47,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  		" FROM USERS " + 
  		" INNER JOIN USER_ROLE ON USERS.USER_ID=USER_ROLE.USER_ID " + 
  		" INNER JOIN ROLE ON ROLE.ROLE_ID=USER_ROLE.ROLE_ID " +
- 		" WHERE((USERS.USER_ID)=:userid) ",resultSetMapping="UsersRoleArrayMapping")
+ 		" WHERE((USERS.USER_ID)=:UserId) ",resultSetMapping="UsersRoleArrayMapping")
 
 @SqlResultSetMapping(
 		name="UsersWithRoleMapping",

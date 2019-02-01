@@ -15,7 +15,7 @@ public interface UserRepository extends CrudRepository <Users, Long> {
 	@Query(nativeQuery=true)
     Set<UsersOnHP> getUsersOnHP();
 	@Query(nativeQuery=true)
-    ArrayList<UserRoleArray> getUsersRoleArray(@Param("userid") long userid);
+    Set<UserRoleArray> getUsersRoleArray(@Param("UserId") long UserId);
 	@Query(nativeQuery=true)
     Set<UsersWithRole> getUsersWithRole();
 }
