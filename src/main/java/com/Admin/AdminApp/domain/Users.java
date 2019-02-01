@@ -49,9 +49,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  		" INNER JOIN ROLE ON ROLE.ROLE_ID=USER_ROLE.ROLE_ID " +
  		" WHERE((USERS.USER_ID)=:userid) ",resultSetMapping="UsersRoleArrayMapping")
 
-/////////////////////
 @SqlResultSetMapping(
-		name="UsersWithRolePMapping",
+		name="UsersWithRoleMapping",
 	    classes={
 	        @ConstructorResult(
 	        		targetClass=UsersWithRole.class,
@@ -73,7 +72,7 @@ query=" SELECT r.USER_NAME , r.PHONE , r.LOGIN  , (SELECT STRING_AGG(ROLE.ROLE_N
 		" join USER_ROLE ur on r.USER_ID =ur.USER_ID " + 
 		"  join ROLE ro on ro.ROLE_ID =ur.ROLE_ID " + 
 		" group by  r.USER_NAME , r.PHONE , r.LOGIN ",
-	resultSetMapping="UsersWithRolePMapping")
+	resultSetMapping="UsersWithRoleMapping")
 
 public class Users {
 	@Id

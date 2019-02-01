@@ -18,6 +18,7 @@ import com.Admin.AdminApp.domain.UserRepository;
 import com.Admin.AdminApp.domain.UserRoleArray;
 import com.Admin.AdminApp.domain.Users;
 import com.Admin.AdminApp.domain.UsersOnHP;
+import com.Admin.AdminApp.domain.UsersRoleArray;
 import com.Admin.AdminApp.domain.UsersWithRole;
 
 
@@ -39,7 +40,7 @@ public class UserController {
       }
       
       @RequestMapping("/userrole/{id}")
-      public ArrayList<UserRoleArray> getUsersRoleArray(@PathVariable long id){
+      public ArrayList<UsersRoleArray> getUsersRoleArray(@PathVariable long id){
     	  return repository.getUsersRoleArray(id);
       }
       
