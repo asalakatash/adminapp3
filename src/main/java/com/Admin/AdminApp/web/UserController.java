@@ -40,7 +40,7 @@ public class UserController {
       }
       
       @RequestMapping("/userrole/{id}")
-      public ArrayList<UsersRoleArray> getUsersRoleArray(@PathVariable long id){
+      public ArrayList<UserRoleArray> getUsersRoleArray(@PathVariable long id){
     	  return repository.getUsersRoleArray(id);
       }
       
