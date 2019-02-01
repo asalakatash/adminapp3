@@ -57,21 +57,21 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 	            columns={
 	                @ColumnResult(name="USER_NAME", type = String.class),
 	                @ColumnResult(name="PHONE", type = String.class),
-	                @ColumnResult(name="LOGIN", type = String.class),
-	                @ColumnResult(name="ROLES", type = String.class)
+	                @ColumnResult(name="ROLESALL", type = String.class),
+	                @ColumnResult(name="LOGIN", type = String.class)
 	            }
 	        )
 	    }
 	)
 @NamedNativeQuery(name="Users.getUsersWithRole",
-query=" SELECT r.USER_NAME , r.PHONE , r.LOGIN  , (SELECT STRING_AGG(ROLE.ROLE_NAME , ' / ' ) " + 
+query=" SELECT u.USER_NAME , u.PHONE , (SELECT STRING_AGG(ROLE.ROLE_NAME , ' / ' ) " + 
 		" from USERS join USER_ROLE on USERS.USER_ID =USER_ROLE.USER_ID " + 
 		" join ROLE on ROLE.ROLE_ID =USER_ROLE.ROLE_ID " + 
-		"  where USERS.USER_ID =r.USER_ID ) as ROLES " + 
-		" from USERS r " + 
-		" join USER_ROLE ur on r.USER_ID =ur.USER_ID " + 
+		"  where USERS.USER_ID =u.USER_ID ) as ROLESALL ,u.LOGIN " + 
+		" from USERS u " + 
+		" join USER_ROLE ur on u.USER_ID =ur.USER_ID " + 
 		"  join ROLE ro on ro.ROLE_ID =ur.ROLE_ID " + 
-		" group by  r.USER_NAME , r.PHONE , r.LOGIN ",
+		" group by  u.USER_NAME ,u.USER_ID, u.PHONE , u.LOGIN ",
 	resultSetMapping="UsersWithRoleMapping")
 
 public class Users {

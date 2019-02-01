@@ -3,18 +3,16 @@ package com.Admin.AdminApp.domain;
 public class UsersWithRole {
 	String UserName ;
 	String Phone;
-	String Login;
 	String Roles;
-	
+	String Login;
 	
 	public UsersWithRole() {}
-	public UsersWithRole(String userName, String phone,  String login,String roles) {
+	public UsersWithRole(String userName, String phone,String roles,String login) {
 		super();
 		UserName = userName;
 		Phone = phone;
-		Login = login;
 		Roles = roles;
-		
+		Login = login;
 	}
 	public String getUserName() {
 		return UserName;
