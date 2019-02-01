@@ -34,7 +34,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 		name="UsersRoleArrayMapping",
 	    classes={
 	        @ConstructorResult(
-	        		targetClass=UserRoleArray.class,
+	        		targetClass=UsersRoleArray.class,
 	            columns={
 	                @ColumnResult(name="ROLE_NAME", type = String.class)
 
