@@ -1,14 +1,14 @@
 package com.Admin.AdminApp.domain;
 
 public class pojoPermission {
-	String Per_name;
 	String Perid;
+	String Per_name;
 	public pojoPermission() {
 	}
-	public pojoPermission(String per_name, String perid) {
+	public pojoPermission(String perid, String per_name) {
 		super();
-		Per_name = per_name;
 		Perid = perid;
+		Per_name = per_name;
 	}
 	public String getPerid() {
 		return Perid;
