@@ -2,12 +2,30 @@ package com.Admin.AdminApp.domain;
 
 import java.util.Set;
 
+import javax.persistence.ColumnResult;
+import javax.persistence.ConstructorResult;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedNativeQuery;
+import javax.persistence.SqlResultSetMapping;
 @Entity
+@SqlResultSetMapping(
+		name="PermissionsMapping",
+	    classes={
+	        @ConstructorResult(
+	        		targetClass=pojoPermission.class,
+	            columns={
+	                @ColumnResult(name="PER_NAME", type = String.class)
+	            }
+	        )
+	    }
+	)
+@NamedNativeQuery(name="Permission.getPermissions",
+query=" select p.PER_NAME from Permission p",
+	resultSetMapping="PermissionsMapping")
 public class Permission {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
