@@ -1,20 +1,20 @@
 package com.Admin.AdminApp.domain;
 
 public class pojoPermission {
-	String Perid;
+	String Per_id;
 	String Per_name;
 	public pojoPermission() {
 	}
-	public pojoPermission(String perid, String per_name) {
+	public pojoPermission(String per_id, String per_name) {
 		super();
-		Perid = perid;
+		Per_id = per_id;
 		Per_name = per_name;
 	}
 	public String getPerid() {
-		return Perid;
+		return Per_id;
 	}
-	public void setPerid(String perid) {
-		Perid = perid;
+	public void setPerid(String per_id) {
+		Per_id = per_id;
 	}
 	public String getPer_name() {
 		return Per_name;

@@ -18,7 +18,7 @@ import javax.persistence.SqlResultSetMapping;
 	        @ConstructorResult(
 	        		targetClass=pojoPermission.class,
 	            columns={
-	            	@ColumnResult(name="PERID", type = String.class),
+	            	@ColumnResult(name="PER_ID", type = String.class),
 	                @ColumnResult(name="PER_NAME", type = String.class)
 	            }
 	        )
