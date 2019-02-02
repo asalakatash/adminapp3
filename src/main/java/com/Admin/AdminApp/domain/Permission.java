@@ -25,7 +25,7 @@ import javax.persistence.SqlResultSetMapping;
 	    }
 	)
 @NamedNativeQuery(name="Permission.getPermissions",
-query=" select p.PERID , p.PER_NAME from Permission p",
+query=" select p.PERID , p.PER_NAME from PERMISSION p",
 	resultSetMapping="PermissionsMapping")
 public class Permission {
 	@Id
