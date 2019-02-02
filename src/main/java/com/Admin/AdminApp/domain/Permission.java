@@ -18,13 +18,14 @@ import javax.persistence.SqlResultSetMapping;
 	        @ConstructorResult(
 	        		targetClass=pojoPermission.class,
 	            columns={
+	            	@ColumnResult(name="PERID", type = String.class),
 	                @ColumnResult(name="PER_NAME", type = String.class)
 	            }
 	        )
 	    }
 	)
 @NamedNativeQuery(name="Permission.getPermissions",
-query=" select p.PER_NAME from Permission p",
+query=" select p.PERID , p.PER_NAME from Permission p",
 	resultSetMapping="PermissionsMapping")
 public class Permission {
 	@Id
