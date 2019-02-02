@@ -35,7 +35,7 @@ public class AdminAppApplication {
     	
     	  UserRepository.deleteAll();
     	  Rolerepository.deleteAll();
-    	  
+    	  perRepository.deleteAll();
     	  Permission per1 = new Permission("per1");
     	  perRepository.save(per1);
     	  Permission per2 = new Permission("per2");
